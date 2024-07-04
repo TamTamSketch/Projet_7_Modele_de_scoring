@@ -1,0 +1,4 @@
+# Ignorer les fichiers volumineux
+df_final_train.csv
+df_final_test.csv
+
