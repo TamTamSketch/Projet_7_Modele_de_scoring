@@ -3,12 +3,19 @@ from flask_debugtoolbar import DebugToolbarExtension
 import importlib.metadata
 import numpy as np
 import os
-import json
-import pickle
+import sys
 import xgboost as xgb
-from modele_xgboost import predict
 import logging
 from logging.handlers import RotatingFileHandler
+
+
+# Récupérer le chemin absolu du répertoire courant
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Ajouter le répertoire courant au chemin de recherche de Python
+sys.path.append(current_dir)
+# Importer le module modele_xgboost depuis le répertoire courant
+from modele_xgboost import predict
+
 
 # Configurer les logs
 file_handler = RotatingFileHandler('flask_app.log', maxBytes=16384, backupCount=20)

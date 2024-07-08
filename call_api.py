@@ -1,9 +1,14 @@
 import pandas as pd
 import requests
 import numpy as np
+import os
 
+# Récupérer le chemin absolu du répertoire parent
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "projet_7"))
 # Charger les données de test depuis un fichier CSV
-df_final_test = pd.read_csv('/home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/df_final_test.csv')
+df_final_test_path = os.path.join(parent_dir, 'df_final_test.csv')
+df_final_test = pd.read_csv(df_final_test_path)
+
 
 # Prendre les 5 premières lignes de df_final_test
 df_final_test_sample = df_final_test.head(100000)

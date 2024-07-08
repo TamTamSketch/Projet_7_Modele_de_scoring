@@ -3,16 +3,16 @@ import pickle
 import numpy as np
 import xgboost as xgb
 
-# Chemin vers le dossier du projet Poetry
-project_dir = '/home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/'
+# Récupérer le chemin absolu du répertoire courant
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Charger le modèle XGBoost
-model_path = os.path.join(project_dir, 'mon_modele.json')
+model_path = os.path.join(current_dir, 'mon_modele.json')
 print(f"Chargement du modèle depuis : {model_path}")
 model = xgb.Booster(model_file=model_path)
 
 # Charger le seuil de décision
-threshold_path = os.path.join(project_dir, 'seuil_decision.pkl')
+threshold_path = os.path.join(current_dir, 'seuil_decision.pkl')
 print(f"Chargement du seuil de décision depuis : {threshold_path}")
 with open(threshold_path, 'rb') as file:
     threshold = pickle.load(file)

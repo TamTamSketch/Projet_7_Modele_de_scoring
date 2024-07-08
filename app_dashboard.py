@@ -5,6 +5,12 @@ import requests
 import plotly.graph_objs as go
 import xgboost as xgb
 import shap
+import os
+
+
+# Récupérer le chemin absolu du répertoire courant
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
 
 def send_request(features):
     url = 'http://localhost:5000/predict'
@@ -21,14 +27,17 @@ def main():
 
     st.markdown("<div style='text-align: center;'><h1>👋 Bienvenue sur l'outil de scoring crédit de Prêt à dépenser</h1></div>", unsafe_allow_html=True)
 
+   
     # Charger les données du DataFrame df_final_test (faute de vrai client)
-    df_final_test = pd.read_csv('/home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/df_final_test.csv')
+    df_final_test_path = os.path.join(current_dir, 'df_final_test.csv')
+    df_final_test = pd.read_csv(df_final_test_path)
+   
 
     # Remplacer les valeurs NaN et infinies par une valeur valide (par exemple, 0)
     df_final_test = df_final_test.replace([np.inf, -np.inf, np.nan], 0)
 
-    # Convertir le DataFrame en un tableau NumPy en selectionnant la 4eme ligne(soit un client)
-    instance_data = df_final_test.iloc[3].values.reshape(1, -1).tolist()[0]
+    # Convertir le DataFrame en un tableau NumPy en selectionnant une ligne(soit un client)
+    instance_data = df_final_test.iloc[10].values.reshape(1, -1).tolist()[0]
 
     # Convertir les valeurs booléennes en entiers (0 ou 1)
     instance_data = [int(x) for x in instance_data]
@@ -47,11 +56,14 @@ def main():
                 else:
                     st.success(f'Le client n\'est pas à risque pour emprunter. (Probabilité : {prediction_proba[0]:.2f})')
 
+        
         # Charger votre modèle XGBoost entraîné
-        model = xgb.Booster(model_file='/home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/mon_modele.json')
+        model_path = os.path.join(current_dir, 'mon_modele.json')
+        model = xgb.Booster(model_file=model_path)
 
         # Charger les données d'entraînement
-        df_final_train = pd.read_csv('/home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/df_final_train.csv')
+        df_final_train_path = os.path.join(current_dir, 'df_final_train.csv')
+        df_final_train = pd.read_csv(df_final_train_path)
 
         # Séparation des features et de la cible
         X_train = df_final_train.drop('TARGET', axis=1)
@@ -61,9 +73,9 @@ def main():
         explainer = shap.TreeExplainer(model)
         shap_values = explainer.shap_values(X_train)
 
-        # Visualiser l'interprétation locale pour l'instance spécifique
-        instance = X_train.values[3]  # Sélectionner la même instance que pour la prédiction
-        instance_label = y_train.values[3]  # Récupérer la valeur cible pour cette instance
+        # >>>>Visualiser l'interprétation locale pour l'instance spécifique
+        instance = X_train.values[10]  # Sélectionner la même instance que pour la prédiction
+        instance_label = y_train.values[10]  # Récupérer la valeur cible pour cette instance
 
         # Convertir l'instance en une matrice 2D
         instance_2d = instance.reshape(1, -1)
