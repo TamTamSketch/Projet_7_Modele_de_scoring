@@ -1822,36 +1822,6 @@ typing = ["typing-extensions"]
 xmp = ["defusedxml"]
 
 [[package]]
-name = "pip"
-version = "24.1.2"
-description = "The PyPA recommended tool for installing Python packages."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "pip-24.1.2-py3-none-any.whl", hash = "sha256:7cd207eed4c60b0f411b444cd1464198fe186671c323b6cd6d433ed80fc9d247"},
-    {file = "pip-24.1.2.tar.gz", hash = "sha256:e5458a0b89f2755e0ee8c0c77613fe5273e05f337907874d64f13171a898a7ff"},
-]
-
-[[package]]
-name = "pipdeptree"
-version = "2.23.0"
-description = "Command line utility to show dependency tree of packages."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "pipdeptree-2.23.0-py3-none-any.whl", hash = "sha256:61e020f2bef08fd4584c50dafe3367f0e9e8b6f6eec9e4c2898bc8a95ff9a4df"},
-    {file = "pipdeptree-2.23.0.tar.gz", hash = "sha256:09597cbee3f42857c8de78e51b7646d389a294b2faf4cd833a206e69a615ebcd"},
-]
-
-[package.dependencies]
-packaging = ">=23.1"
-pip = ">=23.1.2"
-
-[package.extras]
-graphviz = ["graphviz (>=0.20.1)"]
-test = ["covdefaults (>=2.3)", "diff-cover (>=8.0.1)", "pytest (>=7.4.3)", "pytest-console-scripts (>=1.4.1)", "pytest-cov (>=4.1)", "pytest-mock (>=3.12)", "virtualenv (>=20.25,<21)"]
-
-[[package]]
 name = "pkginfo"
 version = "1.11.1"
 description = "Query metadata from sdists / bdists / installed packages."
@@ -3235,4 +3205,4 @@ scikit-learn = ["scikit-learn"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "b6641d4f93f9cc115d3da5760626deab9eb64defba97a34f96ea4939bab5bb4d"
+content-hash = "35330f016538f31d3ebb9d29de6a2986b8cf695e891e0f124bbe849862b8fe6f"
