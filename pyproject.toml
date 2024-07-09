@@ -6,7 +6,7 @@ authors = ["Tamara Daniel-Tricot <tamara.daniel-tricot@veolia.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<=3.12"
+python = "^3.12"
 pandas = "^2.2.2"
 xgboost = "2.0.3"
 flask = "^3.0.3"
