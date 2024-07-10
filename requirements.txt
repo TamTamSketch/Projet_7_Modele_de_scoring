@@ -1,11 +1,11 @@
-python = "^3.12"
-pandas = "^2.2.2"
-xgboost = "2.0.3"
-flask = "^3.0.3"
-numpy = "^2.0.0"
-requests = "^2.32.3"
-flask-debugtoolbar = "^0.15.1"
-plotly = "^5.22.0"
-streamlit = "^1.36.0"
-shap = "^0.46.0"
-seaborn = "^0.13.2"
+python==3.12.4
+pandas==2.2.2
+xgboost==2.0.3
+flask>=3.0.3,<3.1.0
+numpy>=2.0.0,<3.0.0
+requests>=2.32.3,<2.33.0
+flask-debugtoolbar>=0.15.1,<0.16.0
+plotly>=5.22.0,<6.0.0
+streamlit>=1.36.0,<1.37.0
+shap>=0.46.0,<0.47.0
+seaborn>=0.13.2,<0.14.0
