@@ -2,3 +2,5 @@
 df_final_train.csv
 df_final_test.csv
 
+# Ignorer les fichiers non nécessaires
+call_api.py
