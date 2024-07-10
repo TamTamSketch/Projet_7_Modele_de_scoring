@@ -1,3 +1,2 @@
 web: gunicorn api:app
 
-web: env BUILDPACK_URL=null python manage.py runserver
