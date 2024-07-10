@@ -1,3 +1,3 @@
 web: gunicorn api:app
 
-web: env DISABLE_COLLECTSTATIC=1 python manage.py runserver
+web: env BUILDPACK_URL=null python manage.py runserver
