@@ -5,3 +5,4 @@ df_final_test.csv
 # Ignorer les fichiers non nécessaires au deploiement web
 call_api.py
 poetry.lock
+key-pair.pem
