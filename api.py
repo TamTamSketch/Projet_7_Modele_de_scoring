@@ -52,6 +52,6 @@ def predict_endpoint():
         return flask.jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    print("Démarrage du serveur Flask...")
+    print("Démarrage du serveur Flask..")
     app.run(host='0.0.0.0',debug=True)
     print("Serveur Flask démarré")
