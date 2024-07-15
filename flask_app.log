@@ -36,3 +36,5 @@
 2024-07-11 16:51:55,173 INFO: Prédiction effectuée avec succès [in /home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/api.py:45]
 2024-07-15 10:15:13,038 INFO: Requête reçue à l'URL : http://localhost:5000/predict [in /home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/api.py:39]
 2024-07-15 10:15:13,054 INFO: Prédiction effectuée avec succès [in /home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/api.py:45]
+2024-07-15 14:47:39,324 INFO: Requête reçue à l'URL : http://localhost:5000/predict [in /home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/api.py:39]
+2024-07-15 14:47:39,341 INFO: Prédiction effectuée avec succès [in /home/tamara-daniel-tricot/Bureau/0_Projets_ParcoursDataScientist/P7/Projet_7/api.py:45]
