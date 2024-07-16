@@ -8,3 +8,4 @@ poetry.lock
 key-pair_v2.pem
 key-pair.pem
 Tam_accessKeys.csv
+app_dashboard_local.py
