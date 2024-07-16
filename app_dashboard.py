@@ -13,7 +13,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 
 
 def send_request(features):
-    url = 'http://localhost:5000/predict'
+    url = 'http://13.60.25.39:8501/predict'
     data = {'data': [features['instance_data']]}
     response = requests.post(url, json=data)
     if response.status_code == 200:

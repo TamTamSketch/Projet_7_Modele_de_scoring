@@ -1,8 +1,10 @@
 # Ignorer les fichiers volumineux
-
+df_final_test.csv
+df_final_train.csv
 
 # Ignorer les fichiers non nécessaires au deploiement web
 call_api.py
 poetry.lock
 key-pair_v2.pem
 key-pair.pem
+Tam_accessKeys.csv
