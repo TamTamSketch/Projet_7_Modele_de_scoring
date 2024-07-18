@@ -1,6 +1,7 @@
 # Ignorer les fichiers volumineux
 df_final_test.csv
 df_final_train.csv
+df_final_test_limited.csv
 
 # Ignorer les fichiers non nécessaires au deploiement web
 call_api.py
