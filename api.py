@@ -53,5 +53,5 @@ def predict_endpoint():
 
 if __name__ == '__main__':
     print("Démarrage du serveur Flask..")
-    app.run(host='13.60.25.39',port=5000,debug=True)
+    app.run(host='0.0.0.0',port=5000,debug=True)
     print("Serveur Flask démarré")
