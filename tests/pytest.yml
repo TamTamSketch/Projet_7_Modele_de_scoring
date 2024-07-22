@@ -1,0 +1,30 @@
+#exécutera uniquement les tests pytest à chaque nouveau commit ou pull request sur la branche principale
+
+name: Python Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Check Python version
+      run: |
+        import sys
+        required_version = (3, 12, 3)
+        current_version = sys.version_info[:3]
+        if current_version != required_version:
+            print(f"Error: Python version {'.'.join(map(str, current_version))} is installed, but {'.'.join(map(str, required_version))} is required.")
+            sys.exit(1)
+      shell: python
+      
+    - name: Run pytest
+      run: pytest
