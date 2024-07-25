@@ -1,4 +1,4 @@
-name: Tests Python
+name: Tests Python et Déploiement
 
 on:
   push:
@@ -13,16 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Vérifier la version de Python
-      run: |
-        import sys
-        required_version = (3, 12, 3)
-        current_version = sys.version_info[:3]
-        if current_version != required_version:
-            print(f"Erreur : La version Python {'.'.join(map(str, current_version))} est installée, mais {'.'.join(map(str, required_version))} est requise.")
-            sys.exit(1)
-      shell: python
-      
     - name: Exécuter pytest
       run: pytest
 
@@ -47,6 +37,14 @@ jobs:
         
         ssh -o StrictHostKeyChecking=no ${USER}@${HOST} << EOF
           cd Projet_7_Modele_de_scoring
+          
+          # Vérifier la version de Python
+          python3 -c "import sys; required_version = (3, 12, 3); current_version = sys.version_info[:3]; exit(1) if current_version < required_version else exit(0)"
+          
+          if [ $? -ne 0 ]; then
+            echo "Erreur : La version de Python sur l'instance EC2 est inférieure à 3.12.3"
+            exit 1
+          fi
           
           # Activer l'environnement virtuel
           source env/bin/activate
