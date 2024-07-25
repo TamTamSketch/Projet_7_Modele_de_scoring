@@ -11,6 +11,7 @@ key-pair.pem
 Tam_accessKeys.csv
 app_dashboard_local.py
 api_local.py
+app_dashboard_v2.py
 
 # Ignorer les fichiers en cours de création
 test_app_dashboard.py
