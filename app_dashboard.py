@@ -1,4 +1,4 @@
-mport numpy as np
+import numpy as np
 import streamlit as st
 import pandas as pd
 import requests
@@ -21,7 +21,7 @@ def convert_to_serializable(obj):
         return obj
 
 def send_request(features):
-    url = 'http://0.0.0.0:5000/predict'
+    url = 'http://13.60.25.39:5000/predict'
     instance_data = [convert_to_serializable(x) for x in features['instance_data']]
     data = {'data': [instance_data]}
     response = requests.post(url, json=data)
