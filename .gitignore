@@ -13,9 +13,5 @@ app_dashboard_local.py
 api_local.py
 app_dashboard_v2.py
 
-# Exclure tous les fichiers de log de Flask
-flask_app.log
-flask_app.log.*
-
 # Ignorer les fichiers en cours de création
 test_app_dashboard.py
