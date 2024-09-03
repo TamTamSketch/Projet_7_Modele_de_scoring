@@ -25,7 +25,7 @@ def convert_to_serializable(obj):
 
 # Fonction pour envoyer une requête à l'API de prédiction
 def send_request(features):
-    url = 'http://0.0.0.0:5000/predict'
+    url = 'http://13.60.25.39:5000/predict'
     instance_data = [convert_to_serializable(x) for x in features['instance_data']]
     data = {'data': [instance_data]}
     try:
